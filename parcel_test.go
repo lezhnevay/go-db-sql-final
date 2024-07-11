@@ -59,7 +59,7 @@ func TestAddGetDelete(t *testing.T) {
 	require.NoError(t, err)
 
 	_, err = store.Get(parcel.Number)
-	require.Error(t, err)
+	//require.Error(t, err)
 	assert.ErrorIs(t, err, sql.ErrNoRows)
 }
 
@@ -171,7 +171,7 @@ func TestGetByClient(t *testing.T) {
 		// убедитесь, что все посылки из storedParcels есть в parcelMap
 		// убедитесь, что значения полей полученных посылок заполнены верно
 		p, ok := parcelMap[parcel.Number]
-		require.Equal(t, true, ok)
+		require.True(t, ok)
 		assert.Equal(t, p, parcel)
 	}
 }
